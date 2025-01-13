@@ -7,7 +7,7 @@ from taskbridgeapp.reminders.model.remindercontainer import LocalList, RemoteCal
 
 
 class TestReminderController:
-    CONTAINER_BASE = 'taskbridge.reminders.model.remindercontainer'
+    CONTAINER_BASE = 'taskbridgeapp.reminders.model.remindercontainer'
 
     def test_fetch_local_reminders(self):
         succeed = True
