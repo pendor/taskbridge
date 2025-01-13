@@ -90,7 +90,7 @@ and logged into iCloud for synchronisation functions to work.
 
 Run TaskBridge: 
 
-    python taskbridge/gui/TaskBridge.py
+    python taskbridgeapp/gui/TaskBridge.py
 
 Build:
 
@@ -140,7 +140,7 @@ completed reminders, Reminder synchronisation takes **considerably** longer.
 **Can I use TaskBridge without a GUI?**
 
 Yes. A CLI is available for scripted/automated use. See `taskbridge/cli`.
- A [PyPi package](https://pypi.org/project/TaskBridge/) is also available. Also, see the `taskbridge/notes` 
+ A [PyPi package](https://pypi.org/project/TaskBridgeApp/) is also available. Also, see the `taskbridge/notes` 
 and `taskbridge/reminders` folders in the repository.
 
 **Why don't you use the NextCloud Notes API?**

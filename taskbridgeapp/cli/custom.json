@@ -1,0 +1,12 @@
+{
+  "sync_reminders": "1",
+  "caldav_server": "https://nc.vassallo.cloud",
+  "caldav_path": "/remote.php/dav/calendars/keith",
+  "reminder_sync": ["Sync"],
+  "caldav_username": "keith",
+  "sync_notes": "0",
+  "remote_notes_folder": "/Users/keithv/Documents/Notes",
+  "associations": {
+    "bi_directional": ["Sync"]
+  }
+}
