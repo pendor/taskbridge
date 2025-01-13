@@ -6,7 +6,7 @@ from taskbridgeapp.notes.model.notefolder import NoteFolder, LocalNoteFolder, Re
 
 
 class TestNoteController:
-    FOLDER_BASE = 'taskbridge.notes.model.notefolder'
+    FOLDER_BASE = 'taskbridgeapp.notes.model.notefolder'
 
     def test_get_local_folders(self):
         succeed = True
