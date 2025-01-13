@@ -2,7 +2,7 @@
 
 Export your Apple Reminders & Notes to NextCloud, a local folder, or CalDav - and keep them in sync!
 
-[![Documentation Status](https://readthedocs.org/projects/taskbridge/badge/?version=latest)](https://taskbridge.readthedocs.io/en/latest/?badge=latest) ![example workflow](https://github.com/pint-sized/taskbridge/actions/workflows/python-app.yml/badge.svg) [![Coverage Status](https://coveralls.io/repos/github/pint-sized/taskbridge/badge.svg)](https://coveralls.io/github/pint-sized/taskbridge)
+[![Documentation Status](https://readthedocs.org/projects/taskbridge/badge/?version=latest)](https://taskbridge.readthedocs.io/en/latest/?badge=latest) ![example workflow](https://github.com/keithvassallomt/taskbridge/actions/workflows/python-app.yml/badge.svg) [![Coverage Status](https://coveralls.io/repos/github/keithvassallomt/taskbridge/badge.svg)](https://coveralls.io/github/keithvassallo/taskbridge)
 
 Apple Notes & Reminders are great apps... as long as you're using them in the Apple ecosystem. If you need access to your 
 data from Windows, Linux or an Android device, you're stuck using web apps. TaskBridge is an attempt at solving this
@@ -12,7 +12,7 @@ multiple devices.
 > TaskBridge is in no way affiliated-with or endorsed by Apple, Inc.
 
 
-![screenflow_sync.gif](https://github.com/pint-sized/taskbridge/raw/main/docs/screenflow_sync.gif)  ![screenflow_notes.gif](https://github.com/pint-sized/taskbridge/raw/main/docs/screenflow_notes.gif)  ![screenflow_reminders.gif](https://github.com/pint-sized/taskbridge/raw/main/docs/screenflow_reminders.gif)
+![screenflow_sync.gif](https://github.com/keithvassallomt/taskbridge/raw/main/docs/screenflow_sync.gif)  ![screenflow_notes.gif](https://github.com/keithvassallomt/taskbridge/raw/main/docs/screenflow_notes.gif)  ![screenflow_reminders.gif](https://github.com/keithvassallomt/taskbridge/raw/main/docs/screenflow_reminders.gif)
 
 ## Current Sync Support
 
@@ -51,7 +51,7 @@ would like to contribute to TaskBridge, you're in the right place.
 What the project needs most:
 
 1. **Testers**. Being a one-man effort, TaskBridge has been tested on an extremely limited number of configurations. If you
-have a Mac, you too can test TaskBridge by just trying it out and [reporting any issues](https://github.com/pint-sized/taskbridge/issues).
+have a Mac, you too can test TaskBridge by just trying it out and [reporting any issues](https://github.com/keithvassallo/taskbridge/issues).
 2. **Developers**. As with any project in its early days, TaskBridge has bugs. An extra pair of eyes going over the code 
 would be a huge help to continue squashing as many of them as possible. 
 3. **Designers**. The TaskBridge UI and imagery could use a lot of spit and polish. If you have UI/UX or graphic design skills,
@@ -71,7 +71,7 @@ and logged into iCloud for synchronisation functions to work.
 
 3. Clone this repository:
 
-       git clone https://github.com/pint-sized/taskbridge.git
+       git clone https://github.com/keithvassallomt/taskbridge.git
 
 4. Install Poetry:
 
