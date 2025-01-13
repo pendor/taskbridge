@@ -14,9 +14,9 @@ from datetime import datetime
 from pathlib import Path
 from typing import List
 
-from taskbridge import helpers
-from taskbridge.helpers import DateUtil
-from taskbridge.notes.model import notescript
+from taskbridgeapp import helpers
+from taskbridgeapp.helpers import DateUtil
+from taskbridgeapp.notes.model import notescript
 
 
 class Note:

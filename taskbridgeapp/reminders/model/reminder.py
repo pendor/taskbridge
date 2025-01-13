@@ -9,10 +9,10 @@ from typing import List
 
 import caldav
 
-import taskbridge.reminders.model.remindercontainer as model
-from taskbridge import helpers
-from taskbridge.helpers import DateUtil
-from taskbridge.reminders.model import reminderscript
+import taskbridgeapp.reminders.model.remindercontainer as model
+from taskbridgeapp import helpers
+from taskbridgeapp.helpers import DateUtil
+from taskbridgeapp.reminders.model import reminderscript
 
 
 class Reminder:

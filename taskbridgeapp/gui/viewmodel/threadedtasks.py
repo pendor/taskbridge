@@ -15,11 +15,11 @@ import schedule
 
 from PyQt6.QtCore import QThread, pyqtSignal
 
-from taskbridge import helpers
-from taskbridge.notes.controller import NoteController
-from taskbridge.notes.model import notescript
-from taskbridge.reminders.controller import ReminderController
-from taskbridge.reminders.model import reminderscript
+from taskbridgeapp import helpers
+from taskbridgeapp.notes.controller import NoteController
+from taskbridgeapp.notes.model import notescript
+from taskbridgeapp.reminders.controller import ReminderController
+from taskbridgeapp.reminders.model import reminderscript
 
 
 # noinspection PyUnresolvedReferences

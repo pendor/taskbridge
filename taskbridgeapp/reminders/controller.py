@@ -10,8 +10,8 @@ from typing import List
 import caldav
 
 
-from taskbridge import helpers
-from taskbridge.reminders.model.remindercontainer import ReminderContainer
+from taskbridgeapp import helpers
+from taskbridgeapp.reminders.model.remindercontainer import ReminderContainer
 
 
 class ReminderController:

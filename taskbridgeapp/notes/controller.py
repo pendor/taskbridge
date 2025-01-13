@@ -8,7 +8,7 @@ import logging
 from pathlib import Path
 from typing import List
 
-from taskbridge.notes.model.notefolder import NoteFolder, LocalNoteFolder, RemoteNoteFolder
+from taskbridgeapp.notes.model.notefolder import NoteFolder, LocalNoteFolder, RemoteNoteFolder
 
 
 class NoteController:

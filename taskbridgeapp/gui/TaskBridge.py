@@ -8,8 +8,8 @@ from PyQt6.QtGui import QIcon
 from PyQt6.QtWidgets import QApplication
 import darkdetect
 
-from taskbridge.gui.viewmodel import trayicon
-from taskbridge.gui.viewmodel.taskbridgeapp import TaskBridgeApp
+from taskbridgeapp.gui.viewmodel import trayicon
+from taskbridgeapp.gui.viewmodel.taskbridgeapp import TaskBridgeApp
 
 if __name__ == "__main__":
     if getattr(sys, 'frozen', False):

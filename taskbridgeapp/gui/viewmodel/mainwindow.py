@@ -4,7 +4,7 @@ Contains the ``MainWindow`` class.
 
 from PyQt6.QtWidgets import QMainWindow
 
-from taskbridge.gui.viewmodel.ui_mainwindow import Ui_MainWindow
+from taskbridgeapp.gui.viewmodel.ui_mainwindow import Ui_MainWindow
 
 
 class MainWindow(QMainWindow, Ui_MainWindow):

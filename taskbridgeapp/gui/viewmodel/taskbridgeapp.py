@@ -21,16 +21,16 @@ from PyQt6.QtCore import QEvent, Qt, QSize
 from PyQt6.QtGui import QIcon, QKeyEvent
 from PyQt6.QtWidgets import QHeaderView, QTableWidgetItem, QFileDialog, QMessageBox, QMainWindow, QDialog, QWidget
 
-from taskbridge import helpers
-from taskbridge.gui.viewmodel.ui_aboutwindow import Ui_Dialog
-from taskbridge.notes.controller import NoteController
-from taskbridge.notes.model.notefolder import NoteFolder
-from taskbridge.reminders.controller import ReminderController
-from taskbridge.reminders.model.remindercontainer import ReminderContainer
-from taskbridge.gui.viewmodel import threadedtasks
-from taskbridge.gui.viewmodel.mainwindow import MainWindow
-from taskbridge.gui.viewmodel.notecheckbox import NoteCheckBox
-from taskbridge.gui.viewmodel.remindercheckbox import ReminderCheckbox
+from taskbridgeapp import helpers
+from taskbridgeapp.gui.viewmodel.ui_aboutwindow import Ui_Dialog
+from taskbridgeapp.notes.controller import NoteController
+from taskbridgeapp.notes.model.notefolder import NoteFolder
+from taskbridgeapp.reminders.controller import ReminderController
+from taskbridgeapp.reminders.model.remindercontainer import ReminderContainer
+from taskbridgeapp.gui.viewmodel import threadedtasks
+from taskbridgeapp.gui.viewmodel.mainwindow import MainWindow
+from taskbridgeapp.gui.viewmodel.notecheckbox import NoteCheckBox
+from taskbridgeapp.gui.viewmodel.remindercheckbox import ReminderCheckbox
 
 
 class TaskBridgeApp(QMainWindow):

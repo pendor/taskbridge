@@ -18,9 +18,9 @@ import caldav
 from caldav import Calendar
 from caldav.lib import error
 
-import taskbridge.reminders.model.reminder as model
-from taskbridge import helpers
-from taskbridge.reminders.model import reminderscript
+import taskbridgeapp.reminders.model.reminder as model
+from taskbridgeapp import helpers
+from taskbridgeapp.reminders.model import reminderscript
 
 
 class ReminderContainer:

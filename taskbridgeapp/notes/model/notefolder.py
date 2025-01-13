@@ -15,9 +15,9 @@ from contextlib import closing
 from pathlib import Path
 from typing import List
 
-from taskbridge import helpers
-from taskbridge.notes.model import notescript
-from taskbridge.notes.model.note import Note
+from taskbridgeapp import helpers
+from taskbridgeapp.notes.model import notescript
+from taskbridgeapp.notes.model.note import Note
 
 
 class NoteFolder:
