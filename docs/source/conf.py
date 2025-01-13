@@ -4,10 +4,10 @@ import sys
 sys.path.insert(0, os.path.abspath('.'))
 sys.path.insert(0, os.path.abspath('../..'))
 
-project = 'TaskBridge'
-copyright = '2024, Keith Vassallo'
+project = 'TaskBridgeApp'
+copyright = '2025, Keith Vassallo'
 author = 'Keith Vassallo'
-release = '0.1'
+release = '0.1.3b3'
 
 extensions = [
     'sphinx.ext.autodoc',

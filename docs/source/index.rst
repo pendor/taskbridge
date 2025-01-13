@@ -14,7 +14,7 @@ check out the library reference below.
    :template: custom-module-template.rst
    :recursive:
 
-   taskbridge
+   taskbridgeapp
 
 Indices and tables
 ==================
