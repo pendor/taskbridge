@@ -240,7 +240,7 @@ fabric.properties
 tests/conf.json
 
 # Custom CLI config
-taskbridge/cli/*.json
+taskbridgeapp/cli/*.json
 
 # DMG Canvas
 tb_dmg_canvas.dmgcanvas/

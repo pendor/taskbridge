@@ -6,21 +6,21 @@ This script is still needed since the latest version of py2app still doesn't ena
 
 from setuptools import setup
 
-APP = ['taskbridge/gui/TaskBridge.py']
+APP = ['taskbridgeapp/gui/TaskBridge.py']
 DATA_FILES = [
-    ('taskbridge/gui/assets', [
-        'taskbridge/gui/assets/bridge_animated_black.gif',
-        'taskbridge/gui/assets/bridge_animated_white.gif',
-        'taskbridge/gui/assets/bridge_black.png',
-        'taskbridge/gui/assets/bridge_white.png',
-        'taskbridge/gui/assets/refresh.png',
-        'taskbridge/gui/assets/TaskBridge.png',
-        'taskbridge/gui/assets/trash.png'
+    ('taskbridgeapp/gui/assets', [
+        'taskbridgeapp/gui/assets/bridge_animated_black.gif',
+        'taskbridgeapp/gui/assets/bridge_animated_white.gif',
+        'taskbridgeapp/gui/assets/bridge_black.png',
+        'taskbridgeapp/gui/assets/bridge_white.png',
+        'taskbridgeapp/gui/assets/refresh.png',
+        'taskbridgeapp/gui/assets/TaskBridge.png',
+        'taskbridgeapp/gui/assets/trash.png'
         ]
      )
 ]
 OPTIONS = {
-    "iconfile": "taskbridge/gui/assets/TaskBridge.icns",
+    "iconfile": "taskbridgeapp/gui/assets/TaskBridge.icns",
     'plist': {'LSUIElement': True}
 }
 
