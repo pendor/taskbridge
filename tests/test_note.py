@@ -8,10 +8,10 @@ from unittest import mock
 import pytest
 from decouple import config
 
-from taskbridge import helpers
-from taskbridge.notes.model import notescript
-from taskbridge.notes.model.note import Note
-from taskbridge.notes.model.notefolder import LocalNoteFolder, NoteFolder
+from taskbridgeapp import helpers
+from taskbridgeapp.notes.model import notescript
+from taskbridgeapp.notes.model.note import Note
+from taskbridgeapp.notes.model.notefolder import LocalNoteFolder, NoteFolder
 
 TEST_ENV = config('TEST_ENV', default='remote')
 

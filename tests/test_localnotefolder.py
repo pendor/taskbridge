@@ -3,7 +3,7 @@ from unittest import mock
 import pytest
 from decouple import config
 
-from taskbridge.notes.model.notefolder import LocalNoteFolder
+from taskbridgeapp.notes.model.notefolder import LocalNoteFolder
 
 TEST_ENV = config('TEST_ENV', default='remote')
 

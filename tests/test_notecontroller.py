@@ -1,8 +1,8 @@
 from pathlib import Path
 from unittest import mock
 
-from taskbridge.notes.controller import NoteController
-from taskbridge.notes.model.notefolder import NoteFolder, LocalNoteFolder, RemoteNoteFolder
+from taskbridgeapp.notes.controller import NoteController
+from taskbridgeapp.notes.model.notefolder import NoteFolder, LocalNoteFolder, RemoteNoteFolder
 
 
 class TestNoteController:

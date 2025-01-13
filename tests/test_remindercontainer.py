@@ -11,11 +11,11 @@ import keyring
 from caldav.lib.error import AuthorizationError
 from decouple import config
 
-import taskbridge.helpers as helpers
-from taskbridge.reminders.model import reminderscript
-from taskbridge.reminders.model.remindercontainer import ReminderContainer, LocalList, RemoteCalendar
-from taskbridge.reminders.model.reminder import Reminder
-from taskbridge.reminders.controller import ReminderController
+import taskbridgeapp.helpers as helpers
+from taskbridgeapp.reminders.model import reminderscript
+from taskbridgeapp.reminders.model.remindercontainer import ReminderContainer, LocalList, RemoteCalendar
+from taskbridgeapp.reminders.model.reminder import Reminder
+from taskbridgeapp.reminders.controller import ReminderController
 
 TEST_ENV = config('TEST_ENV', default='remote')
 

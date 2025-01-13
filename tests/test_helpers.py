@@ -7,8 +7,8 @@ from pathlib import Path
 import pytest
 from decouple import config
 
-from taskbridge import helpers
-from taskbridge.helpers import DateUtil
+from taskbridgeapp import helpers
+from taskbridgeapp.helpers import DateUtil
 
 TEST_ENV = config('TEST_ENV', default='remote')
 

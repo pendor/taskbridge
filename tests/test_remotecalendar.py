@@ -1,8 +1,8 @@
 import pytest
 from decouple import config
 
-from taskbridge import helpers
-from taskbridge.reminders.model.remindercontainer import RemoteCalendar
+from taskbridgeapp import helpers
+from taskbridgeapp.reminders.model.remindercontainer import RemoteCalendar
 
 TEST_ENV = config('TEST_ENV', default='remote')
 

@@ -2,8 +2,8 @@ from unittest import mock
 
 import caldav.lib.error
 
-from taskbridge.reminders.controller import ReminderController
-from taskbridge.reminders.model.remindercontainer import LocalList, RemoteCalendar
+from taskbridgeapp.reminders.controller import ReminderController
+from taskbridgeapp.reminders.model.remindercontainer import LocalList, RemoteCalendar
 
 
 class TestReminderController:

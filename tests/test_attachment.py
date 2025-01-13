@@ -6,7 +6,7 @@ from pathlib import Path
 import pytest
 from decouple import config
 
-from taskbridge.notes.model.note import Attachment
+from taskbridgeapp.notes.model.note import Attachment
 from test_note import TestNote
 
 TEST_ENV = config('TEST_ENV', default='remote')
