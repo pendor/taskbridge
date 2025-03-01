@@ -26,7 +26,9 @@ tell application "Notes"
         set stagedContent to nId & "~~" & nName & "~~" & nCreation & "~~" & nModified
         set stagedContent to stagedContent & "\n" & attachmentList & "\n" & nBody
         tell application "Finder"
-            set aPath to "taskbridge:notesync:" & folder_name & ":" & nName & ".staged"
+            set shell_command to "echo -n " & quoted form of nName & " | shasum -a 256 | awk '{print $1}'"
+            set hashed_name to do shell script shell_command
+            set aPath to "taskbridge:notesync:" & folder_name & ":" & hashed_name & ".staged"
             set accessRef to (open for access file ((path to temporary items folder as text) & aPath) with write permission)
             try
                 set eof accessRef to 0
