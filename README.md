@@ -77,6 +77,10 @@ and logged into iCloud for synchronisation functions to work.
 
        pipx install poetry
 
+If using Poetry 2.x, the shell plugin must be installed separately:
+
+       poetry self add poetry-plugin-shell
+
 5. Active the virtual environment:
 
        cd /path/to/TaskBridge
