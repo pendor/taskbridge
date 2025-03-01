@@ -12,6 +12,7 @@ import os
 import shutil
 import sqlite3
 from contextlib import closing
+from datetime import datetime
 from pathlib import Path
 from typing import List
 
@@ -143,7 +144,7 @@ class NoteFolder:
             -data (:py:class:`str`) - error message on failure, or dictionary of changes.
 
         """
-        if remote is None or local.modified_date > remote.modified_date:
+        if remote is None or not isinstance(local.modified_date, datetime) or not isinstance(remote.modified_date, datetime) or local.modified_date > remote.modified_date:
             key = 'remote_added' if remote is None else 'remote_updated'
             remote = copy.deepcopy(local)
             if helpers.confirm("Upsert remote note {}".format(remote.name)):
@@ -181,7 +182,7 @@ class NoteFolder:
                 result[key].append(local.name)
 
                 # Update modification date of remote note
-                remote.modified_date = datetime.datetime.now()
+                remote.modified_date = datetime.now()
                 remote.upsert_remote(self.remote_folder.path)
 
                 return True, i_data
@@ -202,7 +203,7 @@ class NoteFolder:
         """
         success = True
         data = "Local notes in folder synchronised to remote"
-        for local_note in self.local_notes:
+        for local_note in self.local_notes:                
             # Get the associated remote note, if any
             remote_note = next((n for n in self.remote_notes
                                 if n.uuid == local_note.uuid or n.name == local_note.name), None)
@@ -708,29 +709,47 @@ class NoteFolder:
         for folder in NoteFolder.FOLDER_LIST:
             if folder.sync_direction == NoteFolder.SYNC_NONE:
                 continue
-
+            
             if folder.sync_direction == NoteFolder.SYNC_LOCAL_TO_REMOTE or folder.sync_direction == NoteFolder.SYNC_BOTH:
                 # Add notes from local folder
                 for note in folder.local_notes:
+                    if hasattr(note.modified_date, 'timestamp') and callable(note.modified_date.strftime):
+                        moddate = note.modified_date
+                    else:
+                        moddate = datetime.now()
+                    
+                    if hasattr(note.created_date, 'timestamp') and callable(note.created_date.strftime):
+                        createdate = note.created_date
+                    else:
+                        createdate = datetime.now()
                     notes.append((
                         folder.local_folder.name,
                         'local',
                         note.uuid,
                         note.name,
-                        helpers.DateUtil.convert('', note.created_date, helpers.DateUtil.SQLITE_DATETIME),
-                        helpers.DateUtil.convert('', note.modified_date, helpers.DateUtil.SQLITE_DATETIME)
+                        helpers.DateUtil.convert('', createdate, helpers.DateUtil.SQLITE_DATETIME),
+                        helpers.DateUtil.convert('', moddate, helpers.DateUtil.SQLITE_DATETIME)
                     ))
 
             if folder.sync_direction == NoteFolder.SYNC_REMOTE_TO_LOCAL or folder.sync_direction == NoteFolder.SYNC_BOTH:
                 # Add notes from remote folder
                 for note in folder.remote_notes:
+                    if hasattr(note.modified_date, 'timestamp') and callable(note.modified_date.strftime):
+                        moddate = note.modified_date
+                    else:
+                        moddate = datetime.now()
+                    
+                    if hasattr(note.created_date, 'timestamp') and callable(note.created_date.strftime):
+                        createdate = note.created_date
+                    else:
+                        createdate = datetime.now()
                     notes.append((
                         folder.remote_folder.name,
                         'remote',
                         note.uuid,
                         note.name,
-                        helpers.DateUtil.convert('', note.created_date, helpers.DateUtil.SQLITE_DATETIME),
-                        helpers.DateUtil.convert('', note.modified_date, helpers.DateUtil.SQLITE_DATETIME)
+                        helpers.DateUtil.convert('', note.createdate, helpers.DateUtil.SQLITE_DATETIME),
+                        helpers.DateUtil.convert('', note.moddate, helpers.DateUtil.SQLITE_DATETIME)
                     ))
 
         try:

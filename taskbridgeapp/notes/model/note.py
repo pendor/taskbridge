@@ -155,7 +155,8 @@ class Note:
         :return: a Markdown representation of the note's content.
         """
         md = ""
-        image_list = [attachment for attachment in attachments if attachment.file_type == Attachment.TYPE_IMAGE]
+        image_list = [attachment for attachment in attachments if 
+                      attachment is not None and isinstance(attachment, Attachment) and attachment.file_type == Attachment.TYPE_IMAGE]
         image_index = 0
         for idx in range(attachment_end + 1, len(staged_lines)):
             line = staged_lines[idx]
@@ -252,6 +253,31 @@ class Note:
             return True, 'Updated local note {}'.format(self.name)
         return False, 'Error updating local note {0}: {1}'.format(self.name, stderr)
 
+    @staticmethod
+    def sanitize_filename(name: str) -> str:
+        """
+        Sanitizes a filename to ensure it's safe for use as a Unix path component.
+        Removes directory components and special characters.
+        
+        :param name: The filename to sanitize
+        :return: A sanitized filename
+        """
+        # Remove directory components 
+        name = os.path.basename(name)
+        
+        # Replace special characters with underscores
+        import re
+        name = re.sub(r'[^\w\-. ]', '_', name)
+        
+        # Ensure name doesn't start/end with spaces or periods
+        name = name.strip('. ')
+        
+        # Provide default if empty
+        if not name:
+            name = "unnamed_note"
+            
+        return name
+    
     def upsert_remote(self, remote_path: Path) -> tuple[bool, str]:
         """
         Upserts the remote note.
@@ -264,12 +290,17 @@ class Note:
             -data (:py:class:`str`) - success message, or error message on failure.
 
         """
-        filename = self.name + '.md'
+        filename = self.sanitize_filename(self.name) + '.md'
+        if hasattr(self.modified_date, 'timestamp') and callable(self.modified_date.timestamp):
+            ts = self.modified_date.timestamp()
+        else:
+            ts = datetime.now().timestamp()
+            
         try:
             with open(remote_path / filename, 'w') as fp:
                 fp.write(self.body_markdown)
                 fp.close()
-            os.utime(remote_path / filename, (self.modified_date.timestamp(), self.modified_date.timestamp()))
+            os.utime(remote_path / filename, (ts, ts))
         except IOError as e:
             return False, 'Failed to create remote note {0}: {1}'.format(remote_path / filename, e)
 
